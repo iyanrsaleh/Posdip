@@ -16,6 +16,15 @@
  * stored-XSS lewat konten sendiri). Kolom detail karena itu ditampilkan
  * sebagai teks polos ringkas (tag di-strip + dipotong), bukan HTML utuh.
  *
+ * Kolom "images" (type:"file", tabel:true) DIKECUALIKAN dari escaping di atas —
+ * dipanggilkan renderFileCell() dari tableBuilder.js (thumbnail gambar yang bisa
+ * diklik untuk preview) supaya konsisten dengan dokumen lain, BUKAN diperlakukan
+ * sebagai teks biasa (yang isinya cuma path mentah "assets/drive/...", tidak
+ * berguna ditampilkan sebagai teks). formatCell custom di sini MENIMPA default
+ * renderRow() sepenuhnya per-kolom (lihat catatan renderFileCell() di
+ * tableBuilder.js) — tanpa pengecualian ini, kolom images akan balik jadi teks
+ * path mentah, bukan thumbnail.
+ *
  * renderEditForm diteruskan ke mountGeneratedTable() dari ./edit.js — supaya
  * tampilan mode EDIT (aksi "Ubah") dikelola file sendiri (konsisten dengan
  * form.js/tabel.js), bukan fallback generik tableBuilder.js. Modul ini bisa
@@ -45,7 +54,7 @@ function escapeHtml(value) {
 }
 
 export async function render(container, data) {
-  const { mountGeneratedTable, columnsFromSchema } = await import('../../../helper/tableBuilder.js');
+  const { mountGeneratedTable, columnsFromSchema, renderFileCell } = await import('../../../helper/tableBuilder.js');
   const { render: renderEdit } = await import('./edit.js');
   await window.NX.defineFluent(['fluentCard']);
 
@@ -86,6 +95,7 @@ export async function render(container, data) {
     },
     formatCell: (value, key) => {
       if (key === 'detail') return plainTextPreview(value);
+      if (key === 'images') return renderFileCell(value);
       if (value == null) return '';
       if (typeof value === 'object') return escapeHtml(JSON.stringify(value));
       return escapeHtml(String(value));

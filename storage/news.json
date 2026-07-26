@@ -120,7 +120,7 @@
         "hidden": false,
         "readonly": false,
         "flag": false,
-        "tabel": false,
+        "tabel": true,
         "condition": true,
         "modal": false,
         "search": false,
