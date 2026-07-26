@@ -48,6 +48,30 @@ export async function render(container, data) {
   const host = container.querySelector('#nx-generated-table-host');
   const columns = columnsFromSchema(data);
 
+  // Kunci tabel ke instansi user yang sedang login — tanpa ini, mountGeneratedTable()
+  // (mode server) menampilkan SEMUA baris tabel `opendata` lintas instansi, padahal
+  // field instansi di skema (Posdip.json) sudah readonly & otomatis dari akun login
+  // (window.NEXA.oauth.instansi, sama sumber dipakai formBuilder.js untuk field
+  // type:"instansi"). Ditambahkan ke production.where.alias (bukan lewat
+  // filterField/filterValue) karena slot filterField sudah dipakai dropdown "tahun"
+  // di bawah, dan where.alias sudah didukung native oleh buildQueryFromProduction()
+  // (tableBuilder.js) sebagai override skema — di-AND-kan otomatis dengan filter
+  // dropdown tahun, TIDAK ada UI untuk user mengubahnya.
+  const instansi = window.NEXA?.oauth?.instansi;
+  if (instansi) {
+    const tabelName = data.production.tabel;
+    const escaped = String(instansi).replace(/\\/g, '\\\\').replace(/'/g, "\\'");
+    const lockClause = `${tabelName}.instansi = '${escaped}'`;
+    const existingWhere = data.production.where?.alias;
+    data.production = {
+      ...data.production,
+      where: {
+        ...data.production.where,
+        alias: existingWhere ? `(${existingWhere}) AND ${lockClause}` : lockClause,
+      },
+    };
+  }
+
   await mountGeneratedTable(host, {
     source: data,
     columns,
