@@ -1,0 +1,13 @@
+{
+  "id": "Posdip",
+  "title": "Posdip",
+  "description": "Posdip",
+  "version": "1.0.0",
+  "author": "iyan",
+  "icon": "assistant_navigation",
+  "iconClass": "icon-folder-controller",
+  "viewId": "Posdip",
+  "place": "edge",
+  "endpoint": "http://opendata.pohuwatokab.go.id",
+  "repodev": "D:/Extensions/Posdip"
+}

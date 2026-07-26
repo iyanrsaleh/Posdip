@@ -1,0 +1,574 @@
+{
+  "id": "h3qxa0_12450487571825219_1784898070663",
+  "appname": "Posdip",
+  "deskripsi": "Portal Satu Data Indonesia Pohuwato",
+  "icons": "package_2",
+  "key": 124504875718252,
+  "devid": 19,
+  "dev": "Posdip",
+  "version": "1.0.0",
+  "devname": "Abdul Maskhur Saleh",
+  "store": "nexaStore",
+  "tabel": "opendata",
+  "production": {
+    "type": "single",
+    "key": 124504875718252,
+    "tabel": "opendata",
+    "field": [
+      "opendata.id",
+      "opendata.file",
+      "opendata.title",
+      "opendata.desktipsi",
+      "opendata.instansi",
+      "opendata.tahun",
+      "opendata.category",
+      "opendata.periode",
+      "opendata.code",
+      "opendata.insight",
+      "opendata.topik"
+    ],
+    "alias": [
+      "opendata.id AS id",
+      "opendata.file AS file",
+      "opendata.title AS title",
+      "opendata.desktipsi AS desktipsi",
+      "opendata.instansi AS instansi",
+      "opendata.tahun AS tahun",
+      "opendata.category AS category",
+      "opendata.periode AS periode",
+      "opendata.code AS code",
+      "opendata.insight AS insight",
+      "opendata.topik AS topik"
+    ],
+    "original": [
+      "id",
+      "file",
+      "title",
+      "desktipsi",
+      "instansi",
+      "tahun",
+      "category",
+      "periode",
+      "code",
+      "insight",
+      "topik"
+    ],
+    "from": {
+      "title": {
+        "name": "title",
+        "label": "Judul",
+        "id": "title",
+        "key": 124504875718252,
+        "type": "text",
+        "icons": "attach_file",
+        "columnWidth": "col-12",
+        "failed": "opendata.title",
+        "fieldAlias": "opendata.title AS title",
+        "placeholder": "Judul dokumen/data",
+        "validation": 2,
+        "forms": true,
+        "value": false,
+        "hidden": false,
+        "readonly": false,
+        "flag": false,
+        "tabel": true,
+        "condition": true,
+        "modal": false,
+        "search": false,
+        "select": false,
+        "filtering": false,
+        "inline": false,
+        "updatedAt": "2026-07-24T13:02:36.508Z"
+      },
+      "desktipsi": {
+        "name": "desktipsi",
+        "label": "Deskripsi",
+        "id": "desktipsi",
+        "key": 124504875718252,
+        "type": "richtext",
+        "icons": "attach_file",
+        "columnWidth": "col-12",
+        "failed": "opendata.desktipsi",
+        "fieldAlias": "opendata.desktipsi AS desktipsi",
+        "placeholder": "Tulis deskripsi data di sini…",
+        "validation": 2,
+        "forms": true,
+        "value": false,
+        "hidden": false,
+        "readonly": false,
+        "flag": false,
+        "tabel": true,
+        "condition": true,
+        "modal": false,
+        "search": false,
+        "select": false,
+        "filtering": false,
+        "inline": false,
+        "updatedAt": "2026-07-24T13:02:37.501Z"
+      },
+      "instansi": {
+        "name": "instansi",
+        "label": "Instansi",
+        "id": "instansi",
+        "key": 124504875718252,
+        "type": "instansi",
+        "icons": "attach_file",
+        "columnWidth": "col-6",
+        "failed": "opendata.instansi",
+        "fieldAlias": "opendata.instansi AS instansi",
+        "placeholder": "Instansi (otomatis dari akun login)",
+        "validation": 2,
+        "forms": true,
+        "value": false,
+        "hidden": false,
+        "readonly": true,
+        "flag": false,
+        "tabel": true,
+        "condition": true,
+        "modal": false,
+        "search": false,
+        "select": false,
+        "filtering": false,
+        "inline": false,
+        "updatedAt": "2026-07-24T13:02:39.670Z"
+      },
+        "file": {
+        "name": "file",
+        "label": "File Dokumen",
+        "id": "file",
+        "key": 124504875718252,
+        "type": "file",
+        "icons": "attach_file",
+        "columnWidth": "col-12",
+        "failed": "opendata.file",
+        "fieldAlias": "opendata.file AS file",
+        "placeholder": "Pilih file dokumen (.pdf, .docx, .xls, .xlsx, .csv)",
+        "validation": 2,
+        "forms": true,
+        "value": false,
+        "hidden": false,
+        "readonly": false,
+        "flag": false,
+        "tabel": true,
+        "condition": true,
+        "modal": false,
+        "search": false,
+        "select": false,
+        "filtering": false,
+        "inline": false,
+        "updatedAt": "2026-07-24T13:02:40.670Z",
+        "upload": true,
+        "fieldAccept": ".pdf,.docx,.xls,.xlsx,.csv",
+        "fieldMultiple": false,
+        "fieldMedia": false
+      },
+      "category": {
+        "name": "category",
+        "label": "Kategori",
+        "id": "category",
+        "key": 124504875718252,
+        "type": "select",
+        "icons": "attach_file",
+        "columnWidth": "col-4",
+        "failed": "opendata.category",
+        "fieldAlias": "opendata.category AS category",
+        "placeholder": "Pilih kategori data",
+        "validation": 2,
+        "forms": true,
+        "value": false,
+        "hidden": false,
+        "readonly": false,
+        "flag": false,
+        "tabel": true,
+        "condition": true,
+        "modal": false,
+        "search": false,
+        "select": {
+          "data": [
+            {
+              "label": "Terbuka",
+              "key": "Terbuka",
+              "value": "Terbuka"
+            },
+            {
+              "label": "Terbatas",
+              "key": "Terbatas",
+              "value": "Terbatas"
+            },
+            {
+              "label": "Tertutup",
+              "key": "Tertutup",
+              "value": "Tertutup"
+            }
+          ]
+        },
+        "filtering": false,
+        "inline": false,
+        "updatedAt": "2026-07-24T13:02:43.859Z",
+        "upload": false
+      },
+      "periode": {
+        "name": "periode",
+        "label": "Periode",
+        "id": "periode",
+        "key": 124504875718252,
+        "type": "select",
+        "icons": "attach_file",
+        "columnWidth": "col-4",
+        "failed": "opendata.periode",
+        "fieldAlias": "opendata.periode AS periode",
+        "placeholder": "Pilih periode data",
+        "validation": 2,
+        "forms": true,
+        "value": false,
+        "hidden": false,
+        "readonly": false,
+        "flag": false,
+        "tabel": true,
+        "condition": true,
+        "modal": false,
+        "search": false,
+        "select": {
+          "data": [
+            {
+              "label": "Harian",
+              "key": "Harian",
+              "value": "Harian"
+            },
+            {
+              "label": "Mingguan",
+              "key": "Mingguan",
+              "value": "Mingguan"
+            },
+            {
+              "label": "Bulanan",
+              "key": "Bulanan",
+              "value": "Bulanan"
+            },
+            {
+              "label": "Triwulanan",
+              "key": "Triwulanan",
+              "value": "Triwulanan"
+            },
+            {
+              "label": "Empat Bulanan",
+              "key": "Empat Bulanan",
+              "value": "Empat Bulanan"
+            },
+            {
+              "label": "Semesteran",
+              "key": "Semesteran",
+              "value": "Semesteran"
+            },
+            {
+              "label": "Tahunan",
+              "key": "Tahunan",
+              "value": "Tahunan"
+            },
+            {
+              "label": "> Dua Tahunan",
+              "key": "> Dua Tahunan",
+              "value": "> Dua Tahunan"
+            }
+          ]
+        },
+        "filtering": false,
+        "inline": false,
+        "updatedAt": "2026-07-24T13:04:44.981Z",
+        "upload": false
+      },
+      "tahun": {
+        "name": "tahun",
+        "label": "Tahun",
+        "id": "tahun",
+        "key": 124504875718252,
+        "type": "select",
+        "icons": "attach_file",
+        "columnWidth": "col-4",
+        "failed": "opendata.tahun",
+        "fieldAlias": "opendata.tahun AS tahun",
+        "placeholder": "Pilih tahun data",
+        "validation": 2,
+        "forms": true,
+        "value": false,
+        "hidden": false,
+        "readonly": false,
+        "flag": false,
+        "tabel": true,
+        "condition": true,
+        "modal": false,
+        "search": false,
+        "select": {
+          "data": [
+            {
+              "label": "2022",
+              "key": "2022",
+              "value": "2022"
+            },
+            {
+              "label": "2023",
+              "key": "2023",
+              "value": "2023"
+            },
+            {
+              "label": "2024",
+              "key": "2024",
+              "value": "2024"
+            },
+            {
+              "label": "2025",
+              "key": "2025",
+              "value": "2025"
+            },
+            {
+              "label": "2026",
+              "key": "2026",
+              "value": "2026"
+            },
+            {
+              "label": "2027",
+              "key": "2027",
+              "value": "2027"
+            },
+            {
+              "label": "2028",
+              "key": "2028",
+              "value": "2028"
+            },
+            {
+              "label": "2029",
+              "key": "2029",
+              "value": "2029"
+            },
+            {
+              "label": "2030",
+              "key": "2030",
+              "value": "2030"
+            }
+          ]
+        },
+        "filtering": false,
+        "inline": false,
+        "updatedAt": "2026-07-24T13:04:25.371Z",
+        "upload": false
+      },
+      "insight": {
+        "name": "insight",
+        "label": "Insight",
+        "id": "insight",
+        "key": 124504875718252,
+        "type": "select",
+        "icons": "attach_file",
+        "columnWidth": "col-6",
+        "failed": "opendata.insight",
+        "fieldAlias": "opendata.insight AS insight",
+        "placeholder": "Pilih insight terkait",
+        "validation": 2,
+        "forms": true,
+        "value": false,
+        "hidden": false,
+        "readonly": false,
+        "flag": false,
+        "tabel": true,
+        "condition": true,
+        "modal": false,
+        "search": false,
+        "select": {
+          "data": [
+            {
+              "label": "APBD Kabupaten Pohuwato",
+              "key": "APBD Kabupaten Pohuwato",
+              "value": "APBD Kabupaten Pohuwato"
+            },
+            {
+              "label": "Kemiskinan",
+              "key": "Kemiskinan",
+              "value": "Kemiskinan"
+            },
+            {
+              "label": "Pendidikan",
+              "key": "Pendidikan",
+              "value": "Pendidikan"
+            },
+            {
+              "label": "Kesehatan",
+              "key": "Kesehatan",
+              "value": "Kesehatan"
+            },
+            {
+              "label": "Ketahanan Pangan",
+              "key": "Ketahanan Pangan",
+              "value": "Ketahanan Pangan"
+            },
+            {
+              "label": "Pertanian",
+              "key": "Pertanian",
+              "value": "Pertanian"
+            },
+            {
+              "label": "Perikanan",
+              "key": "Perikanan",
+              "value": "Perikanan"
+            },
+            {
+              "label": "Stunting",
+              "key": "Stunting",
+              "value": "Stunting"
+            },
+            {
+              "label": "Kependudukan",
+              "key": "Kependudukan",
+              "value": "Kependudukan"
+            },
+            {
+              "label": "Investasi",
+              "key": "Investasi",
+              "value": "Investasi"
+            },
+            {
+              "label": "Lingkungan",
+              "key": "Lingkungan",
+              "value": "Lingkungan"
+            },
+            {
+              "label": "Infrastruktur",
+              "key": "Infrastruktur",
+              "value": "Infrastruktur"
+            }
+          ]
+        },
+        "filtering": false,
+        "inline": false,
+        "updatedAt": "2026-07-24T13:02:47.941Z",
+        "upload": false
+      },
+      "topik": {
+        "name": "topik",
+        "label": "Topik",
+        "id": "topik",
+        "key": 124504875718252,
+        "type": "select",
+        "icons": "attach_file",
+        "columnWidth": "col-6",
+        "failed": "opendata.topik",
+        "fieldAlias": "opendata.topik AS topik",
+        "placeholder": "Pilih topik data",
+        "validation": 2,
+        "forms": true,
+        "value": false,
+        "hidden": false,
+        "readonly": false,
+        "flag": false,
+        "tabel": true,
+        "condition": true,
+        "modal": false,
+        "search": false,
+        "select": {
+          "data": [
+            {
+              "label": "Ekonomi dan Industri",
+              "key": "Ekonomi dan Industri",
+              "value": "Ekonomi dan Industri"
+            },
+            {
+              "label": "Lingkungan dan Sumber Daya Alam",
+              "key": "Lingkungan dan Sumber Daya Alam",
+              "value": "Lingkungan dan Sumber Daya Alam"
+            },
+            {
+              "label": "Budaya dan Agama",
+              "key": "Budaya dan Agama",
+              "value": "Budaya dan Agama"
+            },
+            {
+              "label": "Perlindungan Sosial dan Kesehatan",
+              "key": "Perlindungan Sosial dan Kesehatan",
+              "value": "Perlindungan Sosial dan Kesehatan"
+            },
+            {
+              "label": "Pembangunan Daerah",
+              "key": "Pembangunan Daerah",
+              "value": "Pembangunan Daerah"
+            },
+            {
+              "label": "Pendidikan dan Tenaga Kerja",
+              "key": "Pendidikan dan Tenaga Kerja",
+              "value": "Pendidikan dan Tenaga Kerja"
+            },
+            {
+              "label": "Pemerintahan Umum",
+              "key": "Pemerintahan Umum",
+              "value": "Pemerintahan Umum"
+            },
+            {
+              "label": "Pendukung Umum",
+              "key": "Pendukung Umum",
+              "value": "Pendukung Umum"
+            },
+            {
+              "label": "Ketertiban Umum dan Keselamatan",
+              "key": "Ketertiban Umum dan Keselamatan",
+              "value": "Ketertiban Umum dan Keselamatan"
+            },
+            {
+              "label": "Pertahanan dan Luar Negeri",
+              "key": "Pertahanan dan Luar Negeri",
+              "value": "Pertahanan dan Luar Negeri"
+            }
+          ]
+        },
+        "filtering": false,
+        "inline": false,
+        "updatedAt": "2026-07-24T13:02:49.309Z",
+        "upload": false
+      },
+      "id": {
+        "name": "id",
+        "label": "id",
+        "id": "id",
+        "key": 124504875718252,
+        "type": "text",
+        "icons": "attach_file",
+        "columnWidth": "col-12",
+        "failed": "opendata.id",
+        "fieldAlias": "opendata.id AS id",
+        "placeholder": "id",
+        "validation": 2,
+        "forms": false,
+        "value": false,
+        "hidden": false,
+        "readonly": false,
+        "flag": false,
+        "tabel": false,
+        "condition": true,
+        "modal": false,
+        "search": false,
+        "select": false,
+        "filtering": false,
+        "inline": false,
+        "updatedAt": "2026-07-24T13:02:59.052Z"
+      }
+    },
+    "setting": {
+      "forms": {
+        "applications": "production",
+        "formTitle": "Posdip",
+        "deskripsi": "Posdip",
+        "card": "false",
+        "ToastInfo": "false",
+        "icons": "package_2",
+        "elementById": "Posdip",
+        "methodById": "methodFormPosdip",
+        "submitIcon": "octicon octicon-archive-16",
+        "sendTitle": "Send",
+        "sendClass": "primary",
+        "resetTitle": "Cancel",
+        "resetClass": "true",
+        "methodResetById": "false",
+        "appname": "Posdip"
+      }
+    }
+  },
+  "createdAt": "2026-07-24T13:01:10.664Z",
+  "updatedAt": "2026-07-24T13:08:27.923Z"
+}
